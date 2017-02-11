@@ -2,7 +2,7 @@
 
 The repository is a Docker image based on [php]:[5.6-apache] with a base configuration of Phalcon framework. Phalcon is compiling from source, version is defined by environment variable.
 
-Image is updated via pull requests to the [antuankhanna/docker-phalcon] GitHub repo.
+Image is updated via pull requests to the [chinlung/docker-phalcon] GitHub repo.
 
 Learn more about the framework at Phalcon's [official website].
 
@@ -13,7 +13,7 @@ Learn more about the framework at Phalcon's [official website].
 If you do not want to include a Dockerfile in your project, it is sufficient to do the following:
 
 ```sh
-$ docker run -d -p 80:80 --name my-phalcon-app -v "$PWD/src":/var/www/html -v "$PWD/apache":/etc/apache2/sites-enabled antuankhanna/phalcon:2-apache
+$ docker run -d -p 80:80 --name my-phalcon-app -v "$PWD/src":/var/www/html -v "$PWD/apache":/etc/apache2/sites-enabled chinlung/docker-phalcon
 ```
 
 Where `src` is the directory containing all your PHP code, and `apache` is the directory containing Apache Virtual Host configuration files.
@@ -22,7 +22,7 @@ Where `src` is the directory containing all your PHP code, and `apache` is the d
 
 ```sh
 # Dockerfile
-FROM antuankhanna/phalcon:2-apache
+FROM chinlung/docker-phalcon
 COPY src/ /var/www/html/
 COPY my-apache.conf /etc/apache2/sites-enabled/000-default.conf
 ```
@@ -44,5 +44,5 @@ $ docker run -d -p 80:80 --name my-running-app my-phalcon-app
 [official website]: https://phalconphp.com
 [php]: https://hub.docker.com/_/php/
 [5.6-apache]: https://github.com/docker-library/php/blob/47abb34bbfc92ccd26d07351bc18542ded37ef17/5.6/apache/Dockerfile
-[antuankhanna/docker-phalcon]: https://github.com/AntuanKhanna/docker-phalcon
+[chinlung/docker-phalcon]: https://github.com/chinlung/docker-phalcon
 [phalcon/cphalcon]: https://github.com/phalcon/cphalcon/releases

@@ -1,5 +1,5 @@
 FROM php:5.6-apache
-MAINTAINER Antuan Khanna <antuan@antuankhanna.com>
+MAINTAINER SCL <scl@hanchih.com>
 
 ENV APACHE_LOG_DIR /var/log/apache2
 ENV PHALCON_TAG phalcon-v2.0.13
@@ -20,3 +20,7 @@ RUN a2enmod rewrite\
       && rm -rf /phalcon\
       && echo 'extension=phalcon.so' | tee /usr/local/etc/php/conf.d/30-phalcon.ini\
       && echo '<?php phpinfo();' | tee /var/www/html/index.php
+
+VOLUME ["/var/www/html"]
+VOLUME ["/etc/apache2"]
+VOLUME ["/var/log/apache2"]
