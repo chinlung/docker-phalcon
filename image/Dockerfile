@@ -2,7 +2,7 @@ FROM php:5.6-apache
 MAINTAINER SCL <scl@hanchih.com>
 
 ENV APACHE_LOG_DIR /var/log/apache2
-ENV PHALCON_TAG phalcon-v2.0.13
+ENV PHALCON_TAG phalcon-v1.3.1
 
 WORKDIR /phalcon
 ADD https://github.com/phalcon/cphalcon/archive/$PHALCON_TAG.tar.gz ./phalcon.tar.gz
