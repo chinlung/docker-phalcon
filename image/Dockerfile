@@ -21,6 +21,7 @@ RUN a2enmod rewrite\
       && echo 'extension=phalcon.so' | tee /usr/local/etc/php/conf.d/30-phalcon.ini\
       && echo '<?php phpinfo();' | tee /var/www/html/index.php
 
-VOLUME ["/var/www/html"]
 VOLUME ["/etc/apache2"]
+VOLUME ["/usr/local/etc/php"]
+VOLUME ["/var/www/html"]
 VOLUME ["/var/log/apache2"]
