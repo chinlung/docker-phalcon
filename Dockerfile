@@ -11,7 +11,7 @@ COPY apache.conf /etc/apache2/sites-enabled/000-default.conf
 
 RUN a2enmod rewrite\
       && apt-get update\
-      && apt-get -y install php5-dev libpcre3-dev gcc make php5-mysql\
+      && apt-get -y install libpcre3-dev gcc make \
       && apt-get autoremove\
       && apt-get clean\
       && tar -xzf phalcon.tar.gz\
