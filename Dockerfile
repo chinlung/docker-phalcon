@@ -2,7 +2,7 @@ FROM php:5.6-apache
 MAINTAINER SCL <scl@hanchih.com>
 
 ENV APACHE_LOG_DIR /var/log/apache2
-ENV PHALCON_TAG phalcon-v1.3.1
+ENV PHALCON_TAG phalcon-v1.3.4
 
 WORKDIR /phalcon
 ADD https://github.com/phalcon/cphalcon/archive/$PHALCON_TAG.tar.gz ./phalcon.tar.gz
@@ -34,7 +34,7 @@ RUN docker-php-ext-configure gd \
 RUN docker-php-ext-install mbstring mcrypt pdo_mysql pdo_pgsql gd
 
 # docker-php-ext-install phalcon doesn't work
-RUN apt-get install -y gcc libpcre3-dev make php5-dev php5-mysql git 
+RUN apt-get install -y gcc libpcre3-dev make git 
 RUN apt-get clean
 RUN tar -xzf phalcon.tar.gz
 RUN cd cphalcon-$PHALCON_TAG/build && ./install
